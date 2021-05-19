@@ -1,4 +1,4 @@
-package com.michalska.posts;
+package com.michalska.posts.util;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -8,7 +8,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class JsonReader {
-
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -26,5 +25,4 @@ public class JsonReader {
             return json;
         }
     }
-
 }

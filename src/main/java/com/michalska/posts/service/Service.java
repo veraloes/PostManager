@@ -1,5 +1,8 @@
-package com.michalska.posts;
+package com.michalska.posts.service;
 
+import com.michalska.posts.domain.Post;
+import com.michalska.posts.exception.PostNotFoundException;
+import com.michalska.posts.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

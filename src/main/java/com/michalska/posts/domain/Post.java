@@ -1,4 +1,4 @@
-package com.michalska.posts;
+package com.michalska.posts.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

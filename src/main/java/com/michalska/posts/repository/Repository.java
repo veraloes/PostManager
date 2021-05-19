@@ -1,5 +1,6 @@
-package com.michalska.posts;
+package com.michalska.posts.repository;
 
+import com.michalska.posts.domain.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,6 +1,8 @@
-package com.michalska.posts;
+package com.michalska.posts.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.michalska.posts.domain.Post;
+import com.michalska.posts.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.repository.query.Param;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.Date;
 
-import static com.michalska.posts.JsonReader.readJsonFromUrl;
+import static com.michalska.posts.util.JsonReader.readJsonFromUrl;
 
 @org.springframework.stereotype.Controller
 @RequestMapping
