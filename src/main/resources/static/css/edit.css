@@ -1,0 +1,23 @@
+body {
+    background: #43cea2;
+    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    color: #fff;
+}
+
+.page-content {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+h1 {
+    font-size: 46px;
+}
+
+h2 {
+    font-size: 34px;
+}

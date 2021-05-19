@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:font-size="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link href="/css/edit.css" rel="stylesheet"/>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<div align="center">
+    <h1>Edit Post</h1>
+    <h3>Here you can edit the title and body fields:</h3>
+    <br>
+    <form method="post"
+          th:action="@{/edit/{id} (id=*{id})}" th:object="${editPost}">
+        <table>
+            <tr>
+                <td>Post Id</td>
+                <td><input disabled="disabled" name="id" th:field="*{id}" type="text"/></td>
+            </tr>
+            <tr>
+                <td>Post Title</td>
+                <td><input name="title" th:field="*{title}" type="text"/></td>
+            </tr>
+            <tr>
+                <td>Post Body</td>
+                <td><input name="body" th:field="*{body}" type="text"/></td>
+            </tr>
+
+        </table>
+        <br><input type="submit" value="Submit"/>
+    </form>
+    <div font-size:16px;
+         style="color:red;
+         font-style:normal;
+         margin: 20px"
+         th:if="${errorMessage}"
+         th:utext="${errorMessage}">
+        ...
+    </div>
+</div>
+</body>
+</html>

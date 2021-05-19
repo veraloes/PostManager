@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="/css/main.css" rel="stylesheet"/>
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Post List</title>
+</head>
+<p>Last update:</p>
+<p th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></p>
+<p>Auto reload everyday at 12:00 AM</p>
+<button type="button"><a href="/update">Reload list now</a></button>
+
+<body>
+
+<h1 align="center">Posts List</h1>
+<div align="center">
+    <form method="get" th:action="@{/list}">Filter title by:
+        <input id="keyword" name="keyword" required type="text">
+        <input type="submit" value="Search">
+    </form>
+
+    <button type="button"><a href="/list">Show list without filtering</a></button>
+
+
+    <table cellpadding="10">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Action</th>
+
+        </tr>
+        <tr th:each="post : ${post}">
+            <td th:utext="${post.id}">...</td>
+            <td th:utext="${post.title}">...</td>
+            <td th:utext="${post.body}">...</td>
+            <td>
+                <a href="#" th:href="@{/edit/{id} (id=${post.id})}">Edit</a>
+                <a href="#" th:href="@{/delete/{id} (id=${post.id})}">Delete</a>
+            </td>
+
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
