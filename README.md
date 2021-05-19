@@ -2,10 +2,10 @@
   <img src = "https://user-images.githubusercontent.com/48919716/118817722-d1982d00-b8b3-11eb-8909-31dc8a2c42aa.png" width=500>
 </p>
 
-#PostManager
+# PostManager
 This is an application to manage posts from public API `https://jsonplaceholder.typicode.com/posts`
 
-##Technologies
+## Technologies
 - Java: 11
 - Database: H2
 - Build automation tool: Apache Maven
@@ -13,7 +13,7 @@ This is an application to manage posts from public API `https://jsonplaceholder.
 - UI framework: Thymeleaf
 
 
-##Post structure
+## Post structure
 ```python
     {
         "userId": 1,
@@ -23,7 +23,7 @@ This is an application to manage posts from public API `https://jsonplaceholder.
     }
 ```
 
-##Features
+## Features
 Things you can do with PostManager:
 * Fetch posts from public API
 * Show list of posts except userId
@@ -33,7 +33,7 @@ Things you can do with PostManager:
 * Regular updating of data (every 24 hours)
 * Data can be updated on demand by clicking button
 
-##Setup 
+## Setup 
 * Build the project using `mvn verify`
 * Run `mvn spring-boot:run` to quickly compile and run an application
 * Web application is accessible by homepage ⬇️
@@ -42,7 +42,7 @@ Things you can do with PostManager:
 http://localhost:8080
 ```
 
-##Screenshots
+## Screenshots
 <p align="center">
   <img src = "https://user-images.githubusercontent.com/48919716/118817722-d1982d00-b8b3-11eb-8909-31dc8a2c42aa.png" width=800>
 </p>
