@@ -1,5 +1,8 @@
 package com.michalska.posts;
 
+import com.michalska.posts.domain.Post;
+import com.michalska.posts.repository.Repository;
+import com.michalska.posts.service.Service;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

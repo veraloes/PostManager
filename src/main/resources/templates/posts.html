@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" href="/css/main.css" />
-
+<link href="/css/main.css" rel="stylesheet"/>
 <body>
 
 <div align="center">
     <h1 align="center">List of posts updated!</h1>
-    <p>Time of last update: </p><p th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></p>
+    <p>Time of last update: </p>
+    <p th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></p>
 
-    <p>Number of posts on the list: <td th:utext="${size}">...</td> elements.</p>
+    <p>Number of posts on the list:
+    <td th:utext="${size}">...</td>
+    elements.</p>
 
     <button type="button"><a href="/list">Show List</a></button>
-
-
 </div>
-
-
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.michalska.posts;
+package com.michalska.posts.exception;
 
 import java.text.MessageFormat;
 
