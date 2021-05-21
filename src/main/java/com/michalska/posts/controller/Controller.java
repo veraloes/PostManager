@@ -1,6 +1,5 @@
 package com.michalska.posts.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.michalska.posts.domain.Post;
 import com.michalska.posts.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Date;
-
-import static com.michalska.posts.util.JsonReader.readJsonFromUrl;
 
 @org.springframework.stereotype.Controller
 @RequestMapping
@@ -35,19 +32,7 @@ public class Controller {
     @GetMapping(value = "/update")
     @Scheduled(cron = "0 0 12 1/1 * ? *")
     public String updateData(Model model) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        String json = String.valueOf(readJsonFromUrl("http://jsonplaceholder.typicode.com/posts"));
-
-        try {
-            Post[] p1 = objectMapper.readValue(json, Post[].class);
-
-            System.out.println("Json array to object");
-            for (Post post : p1) {
-                service.createPost(post);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Service.readJson(service);
         model.addAttribute("size", service.getAll().size());
         return "posts";
     }
@@ -86,7 +71,7 @@ public class Controller {
 
     @GetMapping(value = "/delete/{id}")
     public String deletePost(@PathVariable("id") int id, Model model) {
-        service.delete(id);
+        service.deletePost(id);
         model.addAttribute("post", service.getAll());
         return "list";
     }
